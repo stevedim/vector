@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import { BootScene } from './scenes/BootScene';
 import { PreloadScene } from './scenes/PreloadScene';
+import { WelcomeScene } from './scenes/WelcomeScene';
 import { GameScene } from './scenes/GameScene';
 
 const parentElementId = 'app';
@@ -14,7 +15,7 @@ const config: Phaser.Types.Core.GameConfig = {
   physics: {
     default: 'arcade',
     arcade: {
-      gravity: { y: 900 },
+      gravity: { x: 0, y: 900 },
       debug: false
     }
   },
@@ -22,7 +23,7 @@ const config: Phaser.Types.Core.GameConfig = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH
   },
-  scene: [BootScene, PreloadScene, GameScene]
+  scene: [BootScene, PreloadScene, WelcomeScene, GameScene]
 };
 
 // eslint-disable-next-line no-new
